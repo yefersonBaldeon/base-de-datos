@@ -37,3 +37,4 @@ database_snapshot = 'BancaVirtual_01ss';
 go
 
 --probando base de datos
+--probando base de datos
