@@ -36,3 +36,4 @@ restore database BancaVirtual2022a from
 database_snapshot = 'BancaVirtual_01ss';
 go
 
+--probando base de datos
