@@ -1,0 +1,119 @@
+use Transporte;
+
+
+create table CAMIONEROS(
+	matricula varchar(20),
+	nombre varchar(20),
+	apellido varchar(20),
+	licencia varchar(9),
+	direccion varchar(30),
+	salario int,
+	primary key(matricula),
+)
+
+
+insert into CAMIONEROS values('10001','Lucho','Huaman Quispe','M72137336','Ca. Real 1050',1800);
+insert into CAMIONEROS values('10002','Jhunior','Garcia Torres','M71818265','Ca. Real 850',2000);
+insert into CAMIONEROS values('10003','Erick','Flores Flores','M77469379','Av. Ocopilla 340',1900);
+insert into CAMIONEROS values('10004','Fernandez','Rojas Vasquez','M75278451','Av. Bolognesi 287',2500);
+insert into CAMIONEROS values('10005','Martin','Ramos Fuentes','M74778894','Av. Huancavelica 345',950);
+insert into CAMIONEROS values('10006','Adrian','Sanchez Gonzales','M74992011','Jr. Galves 234',950);
+insert into CAMIONEROS values('10007','Leo','Chavez Espinoza','M74553664','Av. Breña 567',950);
+insert into CAMIONEROS values('10008','Pablo','De la Cruz Vargas','M76591001','Jr. Arequipa 192',950);
+insert into CAMIONEROS values('10009','David','Romero Gomez','M72287887','Ps. Fidel Coz 897',1000);
+insert into CAMIONEROS values('10010','Javier','Castro Rivera','M76136211','Av. Mariategui 456',1000);
+
+select *from CAMIONEROS
+
+
+create table PAQUETE(
+	id_paquete varchar(20),
+	matricula varchar(20),
+	cp varchar(20),
+	remitente varchar(20),
+	descripcion varchar(20),
+	destinatario varchar(20),
+	primary key(id_paquete),
+)
+
+
+insert into PAQUETE values('100001','10005', '12001', 'Empresa Shalom', '1000 prendas','GaleriaPascual')
+insert into PAQUETE values('100002','10009','12005','Empresa LEGO','5000 juguetes', 'Plaza Vea')
+insert into PAQUETE values('100003','10004','12003', 'Empresa SONY', '500 prodcutos', 'Galeria Constitucion')
+insert into PAQUETE values('100004','10006','12001','Amazon','2500 pedidos', 'Serpost')
+insert into PAQUETE values('100005','10001','12007','Empresa Shalom','1200 prendas', 'Galeria Nacional')
+insert into PAQUETE values('100006','10002','12009','Amazon','3000 pedidos', 'Serpost')
+insert into PAQUETE values('100007','10008','12005','Empresa Sony','1000 productos', 'Tiendas EFE')
+insert into PAQUETE values('100008','10007','12009','Empresa LEGO','2500 juguetes', 'Ripley')
+insert into PAQUETE values('100009','10010','12001','Amazon','1200 pedidos', 'Serpost')
+insert into PAQUETE values('100010','10001','12001','Amazon','1000 pedidos', 'Serpost')
+insert into PAQUETE values('100011','10003','12007','Empresa Shalom','1200 prendas', 'Galeria Centro')
+insert into PAQUETE values('100012','10005','12003','Amazon','4000 prendas', 'Serpost')
+insert into PAQUETE values('100013','10002','12005','Amazon','2000 pedidos', 'Serpost')
+insert into PAQUETE values('100014','10004','12001','Empresa LEGO','1000 juguetes', 'Metro')
+insert into PAQUETE values('100015','10005','12009','Empresa Sony','2000 productos', 'Plaza Vea')
+insert into PAQUETE values('100016','10004','12001','Empresa Shalom','1000 prendas', 'Galeria Caceres')
+insert into PAQUETE values('100017','10004','12003','Empresa Sony','1500 productos', 'Tiendas EFE')
+insert into PAQUETE values('100018','10002','12001','Empresa Shalom','1500 prendas', 'Galeria Infantil')
+
+select * from PAQUETE
+
+
+
+create table CAMIONES(
+	num_camion varchar(10),
+	placa varchar(20),
+	tipo varchar(15),
+	primary key(num_camion),
+)
+
+
+
+insert into CAMIONES values('20001','F5U-754','carga');
+insert into CAMIONES values('20002','G2D-256','volquete')
+insert into CAMIONES values('20003','V3T-935','carga')
+insert into CAMIONES values('20004','A1A-820','contenedor')
+insert into CAMIONES values('20005','A4F-273','contenedor')
+insert into CAMIONES values('20006','J4G-923','carga')
+insert into CAMIONES values('20007','R2E-123','carga')
+insert into CAMIONES values('20008','P8Y-734','carga')
+insert into CAMIONES values('20009','M4N-471','volquete')
+insert into CAMIONES values('20010','B7X-590','contenedor')
+
+select *from CAMIONES
+
+create table LUGARES(
+	cp varchar(10),
+	nombre varchar(15),
+	direccion varchar(30),
+	primary key(cp),
+	)
+
+
+	insert into LUGARES values('12001','Huancayo', 'Ca. Real 517');
+	insert into LUGARES values('12007','Satipo', 'Ca. Mariategui 456');
+	insert into LUGARES values('12009','Tarma', 'Ca. Francisco 809');
+	insert into LUGARES values('12005','Junin', 'Ca. La victoria 1002');
+	insert into LUGARES values('12003','Huancavelica', 'Ca. Abancay  438');
+
+select *from LUGARES
+
+
+create table CONDUCIR (
+	matricula varchar(20),
+	num_camion varchar (20),
+	primary key(num_camion, matricula),
+)
+
+insert into CONDUCIR values('10001','20008')
+insert into CONDUCIR values('10002','20009')
+insert into CONDUCIR values('10003','20007')
+insert into CONDUCIR values('10004','20002')
+insert into CONDUCIR values('10005','20005')
+insert into CONDUCIR values('10006','20001')
+insert into CONDUCIR values('10007','20003')
+insert into CONDUCIR values('10008','20006')
+insert into CONDUCIR values('10009','20004')
+insert into CONDUCIR values('10010','20010')
+
+select *from CONDUCIR
