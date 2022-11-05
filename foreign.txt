@@ -1,0 +1,30 @@
+
+
+create table estudiantes(
+
+id int primary key identity,
+nombre varchar(20)
+
+)
+
+create table asignatura(
+
+id_materia int primary key identity,
+nombre varchar(20)
+
+)
+
+
+create table alumno_asignatura(
+
+one_alumno int,
+two_asignatura int,
+
+foreign key (one_alumno) references estudiantes(id),
+foreign key (two_asignatura) references asignatura(id_materia),
+
+)
+
+
+
+
