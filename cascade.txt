@@ -1,0 +1,71 @@
+
+create database four;
+
+use four;
+
+create table alumnos(
+
+id varchar(20) primary key,
+nombreAlumno varchar(20),
+
+)
+
+create table materias(
+
+id varchar(20) primary key,
+nombreMateria varchar(20),
+
+)
+
+create table alumnosMateria(
+
+one varchar(20) foreign key references alumnos(id) on delete cascade ,
+two varchar(20) foreign key references materias(id) on update cascade,
+	
+)
+
+
+----------RELLENAR VALORES
+
+insert into alumnos values('100a','juan');
+insert into alumnos values('200a','pedro');
+insert into alumnos values('300a','miguel');
+
+select * from alumnos;
+
+
+insert into materias values('b11','maths');
+insert into materias values('b22','science');
+insert into materias values('b33','history');
+
+select * from materias;
+
+insert into alumnosMateria values('100a','b11');
+insert into alumnosMateria values('200a','b22');
+insert into alumnosMateria values('300a','b33');
+insert into alumnosMateria values('100a','b11');
+
+select * from alumnosMateria;
+
+--------------------ELIMINAR CASCADE 
+
+
+delete alumnos where id='100a';
+
+select * from alumnos;
+select * from materias;
+select * from alumnosMateria;
+
+
+--------------------CAMBIAR COLUMNA
+
+update materias set id='BB111' where id='b11';
+
+select * from alumnos;
+select * from materias;
+select * from alumnosMateria;
+
+
+
+  
+
